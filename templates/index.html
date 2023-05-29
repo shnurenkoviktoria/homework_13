@@ -1,0 +1,23 @@
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<form method="POST" action="{% url 'index' %}">
+    {% csrf_token %}
+
+    <div class="p-5 text-center bg-light">
+
+        <h1 class="mb-3">Generation text</h1>
+        <h4 class="mb-3">Enter the number of max characters</h4>
+        {{ form }}
+        <p>{{ content }}</p>
+        <button type="submit" name="amount" class="btn btn-outline-primary">submit</button>
+
+    </div>
+
+</form>
